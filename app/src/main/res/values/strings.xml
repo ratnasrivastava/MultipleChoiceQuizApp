@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Multiple Choice Quiz App</string>
+    <string name="title">My Awesome Quiz</string>
+    <string name="button_startquiz">Start Quiz</string>
+    <string name="highscore">HighScore:0</string>
+    <string name="submit">Next</string>
+    <string name="score">Score:0</string>
+    <string name="question_number">Question : 1/x</string>
+    <string name="question">What is your name?</string>
+    <string name="timer">00:30</string>
+</resources>

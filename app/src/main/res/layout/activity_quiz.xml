@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/backgroundColor"
+    tools:context="com.example.a51006705.multiplechoicequizapp.QuizActivity">
+
+    <TextView
+        android:id="@+id/textview_score"
+        android:text="@string/score"
+        android:textSize="30sp"
+        android:textColor="@android:color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/textview_question_number"
+        android:text="@string/question_number"
+        android:layout_below="@id/textview_score"
+        android:textSize="30sp"
+        android:textColor="@android:color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/textview_timer"
+        android:layout_alignParentEnd="true"
+        android:text="@string/timer"
+        android:textColor="@android:color/black"
+        android:textSize="30sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/textview_question"
+        android:layout_below="@id/textview_question_number"
+        android:text="@string/question"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="50dp"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:layout_height="wrap_content" />
+    <RadioGroup
+        android:id="@+id/radiogroup"
+        android:layout_below="@id/textview_question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/radiobutton_option1"
+            android:text="Ratna"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <RadioButton
+            android:id="@+id/radiobutton_option2"
+            android:text="Anu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <RadioButton
+            android:id="@+id/radiobutton_option3"
+            android:text="Shivani"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RadioGroup>
+    <Button
+        android:id="@+id/button_submit_next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/submit"
+        android:layout_marginTop="30dp"
+        android:background="@color/lightgreen"
+        android:layout_marginBottom="30dp"
+        android:layout_below="@id/radiogroup"
+        android:textColor="@color/green"/>
+</RelativeLayout>

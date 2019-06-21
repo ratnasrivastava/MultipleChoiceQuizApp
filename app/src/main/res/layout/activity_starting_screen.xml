@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    android:padding="16dp"
+    tools:context="com.example.a51006705.multiplechoicequizapp.StartingScreenActivity">
+
+    <TextView
+        android:id="@+id/textView_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="30dp"
+        android:text="@string/title"
+        android:textSize="30sp"/>
+
+    <TextView
+        android:id="@+id/textView_highscore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/button_start_quiz"
+        android:layout_marginBottom="20dp"
+        android:textColor="@android:color/black"
+        android:layout_centerHorizontal="true"
+        android:text="@string/highscore"
+        android:textSize="25sp"/>
+
+    <Button
+        android:id="@+id/button_start_quiz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_startquiz"
+        android:background="@color/lightgreen"
+        android:textColor="@color/green"
+        android:elevation="8dp"
+        android:layout_centerInParent="true"/>
+
+
+</RelativeLayout>
