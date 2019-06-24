@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,17 +29,29 @@ public class QuizDBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         //to store an instance
         this.db = db;
+        Log.d("ratna","QuizDBHelper");
+       /* final String CREATE_SQL_QUESTION_TABLE = "CREATE TABLE " + QuestionsTable.TABLE_NAME + " (" +
+                QuestionsTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                QuestionsTable.COLUMN_QUESTION + " TEXT, " +
+                QuestionsTable.COLUMN_OPTION1 + " TEXT, " +
+                QuestionsTable.COLUMN_OPTION2 + " TEXT, " +
+                QuestionsTable.COLUMN_OPTION3 + " TEXT, " +
+                QuestionsTable.COLUMN_ANSWERNR + " INTEGER" +
+                ");";*/
 
-        final String CREATE_SQL_QUESTION_TABLE = "CREATE TABLE " + QuizContract.QuestionsTable.TABLE_NAME + " ( " +
-                QuizContract.QuestionsTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                QuizContract.QuestionsTable.COLUMN_QUESTION + " TEXT, " +
-                QuizContract.QuestionsTable.COLUMN_OPTION1 + "TEXT, " +
-                QuizContract.QuestionsTable.COLUMN_OPTION2 + "TEXT, " +
-                QuizContract.QuestionsTable.COLUMN_OPTION3 + "TEXT, " +
-                QuizContract.QuestionsTable.COLUMN_ANSWERNR + "INTEGER" +
-                ")";
+        final String SQL_CREATE_QUESTIONS_TABLE = "CREATE TABLE " +
+                QuestionsTable.TABLE_NAME + " ( " +
+                QuestionsTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                QuestionsTable.COLUMN_QUESTION + " TEXT, " +
+                QuestionsTable.COLUMN_OPTION1 + " TEXT, " +
+                QuestionsTable.COLUMN_OPTION2 + " TEXT, " +
+                QuestionsTable.COLUMN_OPTION3 + " TEXT, " +
+                QuestionsTable.COLUMN_ANSWERNR + " INTEGER" +
+                ");";
 
-        db.execSQL(CREATE_SQL_QUESTION_TABLE);
+
+      //  db.execSQL(CREATE_SQL_QUESTION_TABLE);
+        db.execSQL(SQL_CREATE_QUESTIONS_TABLE);
 
         fillQuestionsTable();
     }
@@ -94,7 +107,7 @@ public class QuizDBHelper extends SQLiteOpenHelper {
                 question.setOption1(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION1)));
                 question.setOption2(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION2)));
                 question.setOption3(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION3)));
-                question.setAnswerNr(c.getInt(c.getColumnIndex(QuestionsTable.COLUMN_QUESTION)));
+                question.setAnswerNr(c.getInt(c.getColumnIndex(QuestionsTable.COLUMN_ANSWERNR)));
 
                 questionsList.add(question);
             }while (c.moveToNext());
